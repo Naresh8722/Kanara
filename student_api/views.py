@@ -3,9 +3,17 @@ from rest_framework import viewsets
 from .models import Student
 from .serializers import StudentSerializer
 from rest_framework.pagination import PageNumberPagination
+from django.views.generic import (TemplateView,ListView)
+
+from django.urls import reverse_lazy
+class StudentListView(TemplateView):
+    template_name = 'grid.html'
+class StudentsListView(ListView):
+    queryset = Student.objects.all()
+    serializer_class = StudentSerializer
 
 class StudentPagination(PageNumberPagination):
-    page_size = 10
+    page_size = 30
     page_size_query_param = 'page_size'
     max_page_size = 100
 
