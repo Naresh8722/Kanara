@@ -24,6 +24,9 @@ $ python manage.py migrate
 ## Run server
 $ python manage.py runserver
 
+
+
 # Front End UI browser URL:
 $ http://127.0.0.1:8000/api/student/
 
+### please go to the Refrence_screen_shots folder for yours Refrence
